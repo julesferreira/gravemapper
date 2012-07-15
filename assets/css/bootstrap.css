@@ -4925,18 +4925,22 @@ button.close {
   bottom: 0;
   height: 60px;
   width: 100%;
-  border-top: 1px solid #444;
+  border-top: 1px solid #000;
 }
-.three-button {
+.mobile-nav .three-button {
   width: 33%;
   height: 100%;
   float: left;
   text-align: center;
   padding-top: 20px;
+  border-top: 1px solid #ccc;
 }
-.border-left {
-  border-left: 1px solid #999;
+.mobile-nav .border-left {
+  border-left: 1px solid #ccc;
 }
-.border-right {
+.mobile-nav .border-right {
   border-right: 1px solid #000;
+}
+.mobile-nav .selected {
+  background-color: #4484B6;
 }
