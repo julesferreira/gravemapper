@@ -4912,3 +4912,27 @@ button.close {
     overflow: visible !important;
   }
 }
+
+/* custom */
+.mobile-nav {
+  background-color: #2C2C2C;
+  color: #999;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  margin-bottom: 0;
+  bottom: 0;
+  height: 40px;
+  width: 100%;
+}
+.three-button {
+  width: 33%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  padding-top: 10px;
+}
+.border-left {
+  border-left: 1px solid #999;
+}
