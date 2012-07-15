@@ -4923,16 +4923,20 @@ button.close {
   z-index: 1030;
   margin-bottom: 0;
   bottom: 0;
-  height: 40px;
+  height: 60px;
   width: 100%;
+  border-top: 1px solid #444;
 }
 .three-button {
   width: 33%;
   height: 100%;
   float: left;
   text-align: center;
-  padding-top: 10px;
+  padding-top: 20px;
 }
 .border-left {
   border-left: 1px solid #999;
+}
+.border-right {
+  border-right: 1px solid #000;
 }
