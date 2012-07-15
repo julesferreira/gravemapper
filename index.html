@@ -106,15 +106,23 @@
 						<tbody>
 							<tr>
 								<td>Latitude: </td>
-								<td>lat value</td>
+								<td id="lat">-</td>
 							</tr>
 							<tr>
 								<td>Longitude: </td>
-								<td>lon value</td>
+								<td id="lon">-</td>
+							</tr>
+							<tr>
+								<td>Altitude: </td>
+								<td id="alt">-</td>
+							</tr>
+							<tr>
+								<td>Heading: </td>
+								<td id="hea">-</td>
 							</tr>
 							<tr>
 								<td>Accuracy: </td>
-								<td>acc value</td>
+								<td id="acc">-</td>
 							</tr>
 						</tbody>
 					</table>
@@ -150,6 +158,30 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/bootstrap.min.js"></script>
+    
+    <script>
+
+	var options = { timeout: 10000 };
+	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+
+	// onSuccess Geolocation
+	//
+	function onSuccess(position) {
+		$("#lat").html(position.coords.latitude);
+		$("#lon").html(position.coords.longitude);
+		$("#alt").html(position.coords.altitude);
+		$("#hea").html(position.coords.heading);
+		$("#acc").html(position.coords.accuracy);	
+	}
+	
+	// onError Callback receives a PositionError object
+	//
+	function onError(error) {
+		alert('code: '    + error.code    + '\n' +
+			'message: ' + error.message + '\n');
+	}
+    
+    </script>
 
   </body>
 </html>
