@@ -161,7 +161,7 @@
     
     <script>
 
-	var options = { timeout: 10000 };
+	var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
 	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
 
 	// onSuccess Geolocation
