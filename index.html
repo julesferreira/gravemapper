@@ -189,10 +189,18 @@
 	// onSuccess Geolocation
 	//
 	function onGeoSuccess(position) {
-		$("#lat").html(position.coords.latitude + " &#176;");
-		$("#lon").html(position.coords.longitude + " &#176;");
-		$("#alt").html(position.coords.altitude + " m");
-		$("#acc").html(position.coords.accuracy + " m");	
+		if (position.coords.latitude) {
+			$("#lat").html(position.coords.latitude + " &#176;");
+		}
+		if (position.coords.longitude) {
+			$("#lon").html(position.coords.longitude + " &#176;");
+		}
+		if (position.coords.altitude) {
+			$("#alt").html(position.coords.altitude + " m");
+		}
+		if (position.coords.accuracy) {
+			$("#acc").html(position.coords.accuracy + " m");
+		}
 	}
 	
 	// onError Callback receives a PositionError object
