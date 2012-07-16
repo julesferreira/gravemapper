@@ -117,10 +117,6 @@
 								<td id="alt">-</td>
 							</tr>
 							<tr>
-								<td>Heading: </td>
-								<td id="hea">-</td>
-							</tr>
-							<tr>
 								<td>Accuracy: </td>
 								<td id="acc">-</td>
 							</tr>
@@ -167,11 +163,10 @@
 	// onSuccess Geolocation
 	//
 	function onSuccess(position) {
-		$("#lat").html(position.coords.latitude);
-		$("#lon").html(position.coords.longitude);
-		$("#alt").html(position.coords.altitude);
-		$("#hea").html(position.coords.heading);
-		$("#acc").html(position.coords.accuracy);	
+		$("#lat").html(position.coords.latitude + " &#176;");
+		$("#lon").html(position.coords.longitude + " &#176;");
+		$("#alt").html(position.coords.altitude + " m");
+		$("#acc").html(position.coords.accuracy + " m");	
 	}
 	
 	// onError Callback receives a PositionError object
