@@ -63,7 +63,7 @@
 				<ul class="thumbnails">
 					<li class="span12">
 						<a href="#" class="thumbnail">
-							<img src="assets/img/square.gif" style="width:100%;height:100px;" alt="">
+							<img id="photo" src="assets/img/square.gif" style="width:100%;height:100px;" alt="">
 						</a>
 					</li>
 				</ul>		
@@ -72,7 +72,7 @@
 		
 		<div class="row-fluid">
 			<div class="span12">
-				<a class="btn href="#">
+				<a class="btn href="#" onClick="takePicture();">
 					<i class="icon-camera"></i>
 					Take photo
 				</a>
@@ -156,9 +156,37 @@
     <script src="assets/js/bootstrap.min.js"></script>
     
     <script>
+    
+    // CAMERA
+    
+    var cameraOptions = { 
+   		quality: 50,
+   		destinationType: Camera.DestinationType.FILE_URI,
+   		sourceType: Camera.PictureSourceType.CAMERA
+    };
+    
+    function takePicture() {
+    	alert("take picture");
+		navigator.camera.getPicture(onSuccess, onFail, cameraOptions); 
+	}
+	
+	function onSuccess(imageURI) {
+    	alert("success");
+		$("#photo").attr("src", imageURI);
+	}
+	
+	function onFail(message) {
+		alert('Failed because: ' + message);
+	}
+    
+    </script>
+    
+    <script>
 
-	var options = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
-	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+    // GEOLOCATION
+    
+	var GeolocationOptions = { maximumAge: 3000, timeout: 5000, enableHighAccuracy: true };
+	var watchID = navigator.geolocation.watchPosition(onSuccess, onError, GeolocationOptions);
 
 	// onSuccess Geolocation
 	//
